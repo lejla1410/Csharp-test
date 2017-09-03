@@ -6,33 +6,24 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    public class Losowosc
+    class Program
     {
-        static void Main(string[] args)
-        {
-            int userInpMin = 0;
-            int userInpMax = 0;
-            Input("Type min number: ", ref userInpMin);
-            Input("Type max number: ", ref userInpMax);
-            AddRandomNumbers(userInpMin, userInpMax);
-
-            Console.ReadLine();
-        }
-
-        static void AddRandomNumbers(int min, int max)
-        {
-            Random random = new Random();
-            int num1 = random.Next(min, max);
-            int num2 = random.Next(min, max);
-            Console.WriteLine($"First random number: {num1}. Second random number: {num2}");
-            Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
-        }
-
-        static void Input(string description, ref int inputVariable)
-        {
-            Console.Write(description);
-            inputVariable = Convert.ToInt32(Console.ReadLine());
-        }
-
+        static int RandAdd(int num1, int num2)
+    {
+        Random rnd = new Random();
+        int Number1 = rnd.Next(num1, num2);
+        int Number2 = rnd.Next(num1, num2);
+        Console.WriteLine(Number1 + " " + Number2);
+        return Number1 + Number2;
     }
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Wpisz proszę zakres dwóch losowych liczb do zsumowania.");
+        int Num1, Num2;
+        while (!((int.TryParse(Console.ReadLine(), out Num1)) && (int.TryParse(Console.ReadLine(), out Num2))))
+            Console.WriteLine("Spróbuj jeszcze raz. Pamiętaj, aby wprowadzić dwie liczby w osobnych linijkach.");
+        Console.WriteLine(RandAdd(Num1, Num2));
+        Console.ReadKey();
+    }
+}
     }
