@@ -19,7 +19,7 @@ namespace ConsoleApplication1
             string wiek;
             wiek = Console.ReadLine();
 
-            Console.WriteLine("Cześć" + name + "fajnie, że masz" + wiek + "lat");
+            Console.WriteLine("Cześć " + name + " fajnie, że masz " + wiek + " lat");
             Console.ReadLine();
         }
     }
