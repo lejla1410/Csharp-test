@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Program
+    public class Losowosc
     {
-        static void Main(string[] args)
+        static int Randomowe( int min, int max)
         {
+        Random rnd1 = new Random();
+        int pierwsza = rnd1.Next(min, max);
+        Console.WriteLine(" Podaj pierwszą liczbę:");
+        pierwsza = Console.ReadLine();
+        Random rnd2 = new Random();
+        int druga = rnd2.Next(min, max);
+        Console.WriteLine(" Podaj drugą liczbę:");
+        druga= Console.ReadLine();
+            return pierwsza + druga;
 
-            Console.WriteLine("Jak masz na imie?");
-            string name;
-            name = Console.ReadLine();
-
-            Console.WriteLine("Ile masz lat?");
-            string wiek;
-            wiek = Console.ReadLine();
-
-            Console.WriteLine("Cześć" + name + "fajnie, że masz" + wiek + "lat");
-            Console.ReadLine();
-        }
+    }
     }
 }
